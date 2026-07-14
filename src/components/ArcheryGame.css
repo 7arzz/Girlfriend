@@ -110,7 +110,7 @@
 /* ===== RESPONSIVE: Mobile (max-width: 480px) ===== */
 @media (max-width: 480px) {
   .envelope-target-container {
-    top: 15%;
+    top: 35%;
   }
 
   .game-instructions {
@@ -130,7 +130,7 @@
 /* ===== RESPONSIVE: Very small phones (max-width: 360px) ===== */
 @media (max-width: 360px) {
   .envelope-target-container {
-    top: 12%;
+    top: 30%;
   }
 
   .game-instructions h2 {
