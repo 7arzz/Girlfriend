@@ -1,0 +1,163 @@
+.archery-game-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  background: #000000;
+  overflow: hidden;
+  user-select: none;
+  touch-action: none;
+}
+
+/* Background overlay clouds for aesthetic depth */
+.archery-game-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 80% 20%, rgba(255, 105, 180, 0.15) 0%, transparent 40%),
+                    radial-gradient(circle at 20% 80%, rgba(186, 85, 211, 0.15) 0%, transparent 40%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.game-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Envelope target — use viewport-based positioning for true responsiveness */
+.envelope-target-container {
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  transition: transform 0.05s linear;
+  cursor: pointer;
+}
+
+.game-instructions {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 20;
+  pointer-events: none;
+  font-family: 'Fredoka', cursive;
+  color: white;
+  width: 90%;
+  max-width: 600px;
+}
+
+.game-instructions h2 {
+  font-size: 2.2rem;
+  margin: 0;
+  text-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+  background: linear-gradient(to right, #ff758f, #ffb3c1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: heartbeat 2s infinite alternate;
+}
+
+.game-instructions p {
+  font-size: 1.1rem;
+  margin-top: 8px;
+  color: #ffb3c1;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+}
+
+/* Background blur transition after hits */
+.scenery-blur {
+  transition: filter 2s ease;
+}
+
+@keyframes heartbeat {
+  from { transform: scale(1); }
+  to { transform: scale(1.03); }
+}
+
+/* ===== RESPONSIVE: Tablet (max-width: 768px) ===== */
+@media (max-width: 768px) {
+  .envelope-target-container {
+    top: 22%;
+  }
+
+  .game-instructions {
+    top: 20px;
+  }
+
+  .game-instructions h2 {
+    font-size: 1.8rem;
+  }
+
+  .game-instructions p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== RESPONSIVE: Mobile (max-width: 480px) ===== */
+@media (max-width: 480px) {
+  .envelope-target-container {
+    top: 15%;
+  }
+
+  .game-instructions {
+    top: 10px;
+  }
+
+  .game-instructions h2 {
+    font-size: 1.3rem;
+  }
+
+  .game-instructions p {
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+}
+
+/* ===== RESPONSIVE: Very small phones (max-width: 360px) ===== */
+@media (max-width: 360px) {
+  .envelope-target-container {
+    top: 12%;
+  }
+
+  .game-instructions h2 {
+    font-size: 1.1rem;
+  }
+
+  .game-instructions p {
+    font-size: 0.72rem;
+  }
+}
+
+/* ===== RESPONSIVE: Landscape phones ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .envelope-target-container {
+    top: 18%;
+  }
+
+  .game-instructions {
+    top: 6px;
+  }
+
+  .game-instructions h2 {
+    font-size: 1.2rem;
+  }
+
+  .game-instructions p {
+    font-size: 0.75rem;
+    margin-top: 2px;
+  }
+}

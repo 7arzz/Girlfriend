@@ -1,0 +1,239 @@
+.app-container {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: #000000;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Welcome Screen */
+.welcome-screen {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  max-width: 460px;
+  width: 100%;
+  padding: 50px 30px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 
+              inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.pop-in {
+  animation: popInWelcome 1s cubic-bezier(0.175, 0.885, 0.32, 1.2) forwards;
+}
+
+@keyframes popInWelcome {
+  0% {
+    transform: scale(0.9) translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.welcome-love-icon {
+  font-size: 70px;
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: floatEmoji 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatEmoji {
+  0% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(-15px) rotate(8deg);
+  }
+}
+
+.welcome-title {
+  font-family: 'Fredoka', cursive;
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #ff5e8a 40%, #ff2a6d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 12px rgba(255, 80, 150, 0.7)) drop-shadow(0 0 30px rgba(255, 50, 120, 0.4));
+  letter-spacing: 1px;
+}
+
+.welcome-tagline {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #ffb3c1;
+  margin-bottom: 35px;
+  opacity: 0.9;
+}
+
+.btn-start {
+  font-family: 'Fredoka', cursive;
+  background: linear-gradient(135deg, #ff4e50 0%, #f9d423 100%);
+  border: none;
+  font-size: 1.3rem;
+  padding: 16px 40px;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(249, 212, 35, 0.35);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-start:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(255, 78, 80, 0.5);
+  background: linear-gradient(135deg, #ff4e50 0%, #f9a023 100%);
+}
+
+.btn-start:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 5px 15px rgba(255, 78, 80, 0.3);
+}
+
+/* ===== RESPONSIVE: Tablet (max-width: 768px) ===== */
+@media (max-width: 768px) {
+  .welcome-screen {
+    padding: 40px 24px;
+    border-radius: 20px;
+    max-width: 400px;
+  }
+
+  .welcome-love-icon {
+    font-size: 58px;
+    margin-bottom: 16px;
+  }
+
+  .welcome-title {
+    font-size: 2.8rem;
+  }
+
+  .welcome-tagline {
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+  }
+
+  .btn-start {
+    font-size: 1.15rem;
+    padding: 14px 34px;
+  }
+}
+
+/* ===== RESPONSIVE: Mobile (max-width: 480px) ===== */
+@media (max-width: 480px) {
+  .main-content {
+    padding: 16px;
+  }
+
+  .welcome-screen {
+    padding: 32px 20px;
+    border-radius: 18px;
+    max-width: 100%;
+  }
+
+  .welcome-love-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+  }
+
+  .welcome-title {
+    font-size: 2.2rem;
+    letter-spacing: 0.5px;
+  }
+
+  .welcome-tagline {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+
+  .btn-start {
+    font-size: 1.05rem;
+    padding: 13px 28px;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ===== RESPONSIVE: Very small phones (max-width: 360px) ===== */
+@media (max-width: 360px) {
+  .welcome-screen {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+
+  .welcome-love-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .welcome-title {
+    font-size: 1.85rem;
+  }
+
+  .welcome-tagline {
+    font-size: 0.82rem;
+    margin-bottom: 20px;
+  }
+
+  .btn-start {
+    font-size: 0.95rem;
+    padding: 12px 24px;
+  }
+}
+
+/* ===== RESPONSIVE: Landscape phones ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .welcome-screen {
+    padding: 20px 24px;
+    max-width: 420px;
+  }
+
+  .welcome-love-icon {
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+
+  .welcome-title {
+    font-size: 2rem;
+    margin: 0 0 8px 0;
+  }
+
+  .welcome-tagline {
+    font-size: 0.82rem;
+    margin-bottom: 14px;
+    line-height: 1.4;
+  }
+
+  .btn-start {
+    font-size: 1rem;
+    padding: 10px 28px;
+  }
+}
