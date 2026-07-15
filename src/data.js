@@ -51,7 +51,7 @@ export const DATA = {
   // ===== SUCCESS SCREEN =====
   success: {
     floatingHearts: ["💖", "🤍", "🌸", "✨"],
-    coupleEmoji: "👩‍❤️‍👨",
+    coupleEmoji: "",
     title: "Yay! I knew you'd say YES! 🥰❤️",
     text: "Terima kasih ya sudah menerima perasaanku! Mulai hari ini, mari kita tulis cerita bahagia bersama-sama.",
     calendarHeader: "HARI JADIAN",
