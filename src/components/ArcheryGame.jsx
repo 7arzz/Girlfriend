@@ -487,7 +487,7 @@ export default function ArcheryGame({ onGameComplete }) {
         ref={envelopeContainerRef}
         className="envelope-target-container"
         style={{
-          transform: `translateY(${floatingOffset}px)`,
+          transform: `translate(-50%, ${floatingOffset}px)`,
         }}
         onClick={(e) => {
           // Allow instant hit on clicking/tapping the envelope directly (great for testing & accessibility!)
