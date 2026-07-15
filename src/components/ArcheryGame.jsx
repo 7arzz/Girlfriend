@@ -31,7 +31,7 @@ export default function ArcheryGame({ onGameComplete }) {
     const scale = getResponsiveScale();
     if (w <= 480) return { x: 50 + 20 * scale, y: h - 70 };
     if (w <= 768) return { x: 80 + 20 * scale, y: h - 100 };
-    return { x: 140, y: h - 140 };
+    return { x: 140, y: h / 2 };
   };
 
   // Game physics config
@@ -89,7 +89,7 @@ export default function ArcheryGame({ onGameComplete }) {
       const scale = getScale();
       if (w <= 480) return { x: 50 + 20 * scale, y: canvas.height - 70 };
       if (w <= 768) return { x: 80 + 20 * scale, y: canvas.height - 100 };
-      return { x: 140, y: canvas.height - 140 };
+      return { x: 140, y: canvas.height / 2 };
     };
 
     const gameLoop = () => {

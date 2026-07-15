@@ -36,8 +36,8 @@
 /* Envelope target — use viewport-based positioning for true responsiveness */
 .envelope-target-container {
   position: absolute;
-  top: 28%;
-  left: 50%;
+  top: 45%;
+  left: 60%;
   transform: translateX(-50%);
   z-index: 5;
   transition: transform 0.05s linear;
@@ -92,6 +92,7 @@
 @media (max-width: 768px) {
   .envelope-target-container {
     top: 22%;
+    left: 50%;
   }
 
   .game-instructions {
@@ -146,6 +147,7 @@
 @media (max-height: 500px) and (orientation: landscape) {
   .envelope-target-container {
     top: 18%;
+    left: 50%;
   }
 
   .game-instructions {
